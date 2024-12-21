@@ -24,18 +24,16 @@
 
 	&.primary {
 		background-color: var(--primary);
-		color: var(--white);
+		color: var(--bold-text);
 
 		&:hover {
 			background-color: var(--white);
-			color: var(--bold-text);
 			border-color: var(--light-blue);
 		}
 
 		&:disabled:hover {
 			background-color: var(--primary);
 			border-color: var(--primary);
-			color: var(--white);
 		}
 	}
 

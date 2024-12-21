@@ -16,6 +16,9 @@ export const validatePassword = (password: string): boolean => {
 	return password.length >= 8;
 };
 
-export const validateConfirmPassword = (password: string, prevPassword: string): boolean => {
+export const validateConfirmPassword = (
+	password: string,
+	prevPassword: string,
+): boolean => {
 	return password === prevPassword;
 };

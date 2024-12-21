@@ -30,35 +30,36 @@
 	color: var(--bold-text);
 	cursor: pointer;
 
-	&:active, &:focus {
+	&:active,
+	&:focus {
 		border: none;
 		outline: none;
 
 		& ~ .line {
 			border-color: var(--primary);
-			transition: border-color .3s ease-in-out;
+			transition: border-color 0.3s ease-in-out;
 		}
 	}
 
-	&:invalid ~ .line, &.invalid ~ .line {
+	&:invalid ~ .line,
+	&.invalid ~ .line {
 		border-color: var(--red);
-		transition: border-color .3s ease-in-out;
+		transition: border-color 0.3s ease-in-out;
 	}
 
 	&::placeholder {
 		color: var(--main-text);
 	}
 
-	&[type="number"]::-webkit-outer-spin-button,
-	&[type="number"]::-webkit-inner-spin-button {
+	&[type='number']::-webkit-outer-spin-button,
+	&[type='number']::-webkit-inner-spin-button {
 		-webkit-appearance: none;
 	}
 
-	&[type="number"] {
+	&[type='number'] {
 		-moz-appearance: textfield;
 	}
 }
-
 
 .line {
 	margin-top: 4px;
@@ -66,5 +67,5 @@
 	height: 2px;
 	border: none;
 	border-bottom: 2px solid var(--light-gray);
-	transition: border-color .3s ease-in-out;
+	transition: border-color 0.3s ease-in-out;
 }

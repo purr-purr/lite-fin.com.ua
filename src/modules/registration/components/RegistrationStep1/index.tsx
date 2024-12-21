@@ -1,20 +1,20 @@
-import {type ChangeEvent, FC, useEffect, useState} from 'react';
-import Input from "@modules/common/components/Input";
-import Checkbox from "@modules/common/components/Checkbox";
+import { type ChangeEvent, FC, useEffect, useState } from 'react';
+import Input from '@modules/common/components/Input';
+import Checkbox from '@modules/common/components/Checkbox';
 import {
 	validateConfirmPassword,
 	validateDefault,
 	validateEmail,
 	validatePassword,
-	validatePhone
-} from "@modules/registration/helpers";
+	validatePhone,
+} from '@modules/registration/helpers';
 import type {
 	IFormValues,
 	IRegistrationStepProps,
-	IValidationState
-} from "@modules/registration/types";
+	IValidationState,
+} from '@modules/registration/types';
 
-const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
+const RegistrationStep1: FC<IRegistrationStepProps> = ({ isDone }) => {
 	const initFormValues: IFormValues = {
 		lastname: '',
 		firstname: '',
@@ -43,7 +43,7 @@ const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
 	});
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, value} = e.target;
+		const { name, value } = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
@@ -79,7 +79,7 @@ const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
 	};
 
 	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, checked} = e.target;
+		const { name, checked } = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
@@ -120,9 +120,7 @@ const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
 				label="Стать"
 			>
 				<>
-					<option value="none">Виберіть
-						стать
-					</option>
+					<option value="none">Виберіть стать</option>
 					<option value="male">Жіноча</option>
 					<option value="female">Чоловіча</option>
 				</>
@@ -223,6 +221,6 @@ const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
 			/>
 		</div>
 	);
-}
+};
 
 export default RegistrationStep1;

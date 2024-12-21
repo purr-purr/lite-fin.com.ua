@@ -1,4 +1,4 @@
-import {regions} from "@utils/data";
+import { regions } from '@utils/data';
 
 const RegionsList = () => (
 	<>

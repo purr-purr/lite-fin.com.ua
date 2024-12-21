@@ -1,17 +1,16 @@
-import {type ChangeEvent, FC, useEffect, useState} from 'react';
-import Input from "@modules/common/components/Input";
-import Checkbox from "@modules/common/components/Checkbox";
+import { type ChangeEvent, FC, useEffect, useState } from 'react';
+import Input from '@modules/common/components/Input';
+import Checkbox from '@modules/common/components/Checkbox';
 import s from './RegistrationStep2.module.scss';
-import {validateDefault} from "@modules/registration/helpers";
+import { validateDefault } from '@modules/registration/helpers';
 import type {
 	IFormValues,
 	IRegistrationStepProps,
-	IValidationState
-} from "@modules/registration/types";
-import RegistrationRegionsList
-	from "@modules/registration/components/RegistrationRegionsList";
+	IValidationState,
+} from '@modules/registration/types';
+import RegistrationRegionsList from '@modules/registration/components/RegistrationRegionsList';
 
-const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
+const RegistrationStep2: FC<IRegistrationStepProps> = ({ isDone }) => {
 	const initFormValues: IFormValues = {
 		id: '',
 		passport: '',
@@ -58,7 +57,7 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 	});
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, value} = e.target;
+		const { name, value } = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
@@ -69,11 +68,10 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 			...prevState,
 			[name]: validateDefault(value),
 		}));
-
 	};
 
 	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, checked} = e.target;
+		const { name, checked } = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
@@ -84,7 +82,6 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 			...prevState,
 			[name]: checked,
 		}));
-
 	};
 
 	useEffect(() => {
@@ -96,7 +93,6 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 	const isValidInput = (name: string): boolean => {
 		return !validationState[name] && formValues[name].length > 0;
 	};
-
 
 	return (
 		<>
@@ -144,17 +140,10 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 
 			<h4 className={s.subTitle}>Адреса проживання</h4>
 
-			<Input
-				name="area"
-				isSelect
-				onChange={handleInputChange}
-				label="Область"
-			>
+			<Input name="area" isSelect onChange={handleInputChange} label="Область">
 				<>
-					<option value="none">Виберіть
-						область
-					</option>
-					<RegistrationRegionsList/>
+					<option value="none">Виберіть область</option>
+					<RegistrationRegionsList />
 				</>
 			</Input>
 
@@ -199,16 +188,9 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 
 			<h4 className={s.subTitle}>Адреса реєстрації</h4>
 
-			<Input
-				name="regArea"
-				isSelect
-				onChange={handleInputChange}
-				label="Область"
-			>
-				<option value="none">Виберіть
-					область
-				</option>
-				<RegistrationRegionsList/>
+			<Input name="regArea" isSelect onChange={handleInputChange} label="Область">
+				<option value="none">Виберіть область</option>
+				<RegistrationRegionsList />
 			</Input>
 
 			<Input
@@ -253,14 +235,8 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 
 			<h4 className={s.subTitle}>Додаткова інформація</h4>
 
-			<Input
-				name="education"
-				isSelect
-				onChange={handleInputChange}
-				label="Освіта"
-			>
-				<option value="none">Виберiть освiту
-				</option>
+			<Input name="education" isSelect onChange={handleInputChange} label="Освіта">
+				<option value="none">Виберiть освiту</option>
 				<option value="1">Неповна середня</option>
 				<option value="2">Середня</option>
 				<option value="3">Середня спеціальна</option>
@@ -287,11 +263,10 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 				label="Соціальний статус"
 			>
 				<>
-					<option value="none">Виберiть статус
-					</option>
+					<option value="none">Виберiть статус</option>
 					<option value="1">Підприємець</option>
-					<option value="2">Особа, що провадить незалежну професійну
-						діяльність
+					<option value="2">
+						Особа, що провадить незалежну професійну діяльність
 					</option>
 					<option value="3">Найманий працівник</option>
 					<option value="4">Домогосподарка</option>
@@ -317,6 +292,6 @@ const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
 			/>
 		</>
 	);
-}
+};
 
 export default RegistrationStep2;

@@ -36,7 +36,7 @@ const Contacts = () => {
 		{
 			title: 'ЄДРПОУ',
 			desc: COMPANY_EDRPOU,
-		}
+		},
 	];
 
 	return (

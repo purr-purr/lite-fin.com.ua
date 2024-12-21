@@ -21,6 +21,7 @@
 	&Rules {
 		@include flex($gap: 16px);
 		margin-bottom: 40px;
+		color: var(--white);
 	}
 
 	&RulesItem {
@@ -95,7 +96,7 @@
 	}
 
 	&.active {
-		color: var(--white);
+		color: var(--bold-text);
 		transition: color 0.3s ease-in-out;
 	}
 }

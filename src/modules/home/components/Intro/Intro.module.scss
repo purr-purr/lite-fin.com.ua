@@ -22,7 +22,7 @@
 	width: 100%;
 
 	&Title {
-		@include gradient-text();
+		color: var(--white);
 		font-size: 80px;
 		font-weight: 600;
 		margin-bottom: 24px;
@@ -34,6 +34,7 @@
 	}
 
 	&Desc {
+		color: var(--white);
 		font-size: 18px;
 		line-height: 1.6;
 		max-width: 600px;
@@ -44,8 +45,4 @@
 			margin-bottom: 20px;
 		}
 	}
-}
-
-.buttonsGroup {
-	width: fit-content;
 }

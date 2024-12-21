@@ -5,7 +5,7 @@ export const formatDate = (today: Date) => {
 	const month = String(today.getMonth() + 1).padStart(2, '0');
 	const year = today.getFullYear();
 	return `${day}.${month}.${year}`;
-}
+};
 
 export const calcXIRR = (cashFlows: number[], dates: number[]) => {
 	const EPSILON = 0.000001;
@@ -15,7 +15,9 @@ export const calcXIRR = (cashFlows: number[], dates: number[]) => {
 	function f(rate: number) {
 		let sum = 0;
 		for (let i = 0; i < cashFlows.length; i++) {
-			sum += cashFlows[i] / Math.pow(1 + rate, (dates[i] - dates[0]) / (365 * 24 * 60 * 60));
+			sum +=
+				cashFlows[i] /
+				Math.pow(1 + rate, (dates[i] - dates[0]) / (365 * 24 * 60 * 60));
 		}
 		return sum;
 	}
@@ -23,7 +25,9 @@ export const calcXIRR = (cashFlows: number[], dates: number[]) => {
 	function fDerivative(rate: number) {
 		let sum = 0;
 		for (let i = 0; i < cashFlows.length; i++) {
-			sum -= (dates[i] - dates[0]) / (365 * 24 * 60 * 60) * cashFlows[i] / Math.pow(1 + rate, (dates[i] - dates[0]) / (365 * 24 * 60 * 60) + 1);
+			sum -=
+				(((dates[i] - dates[0]) / (365 * 24 * 60 * 60)) * cashFlows[i]) /
+				Math.pow(1 + rate, (dates[i] - dates[0]) / (365 * 24 * 60 * 60) + 1);
 		}
 		return sum;
 	}
@@ -41,4 +45,4 @@ export const calcXIRR = (cashFlows: number[], dates: number[]) => {
 	const resultRate = rate * 100;
 
 	return resultRate.toFixed(2);
-}
+};

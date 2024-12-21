@@ -5,7 +5,7 @@ const Intro = () => {
 	const scrollToElement = () => {
 		const targetElement = document.getElementById('calc');
 		if (targetElement) {
-			targetElement.scrollIntoView({behavior: 'smooth'});
+			targetElement.scrollIntoView({ behavior: 'smooth' });
 		}
 	};
 
@@ -13,14 +13,16 @@ const Intro = () => {
 		<section className={s.container}>
 			<article className={s.info}>
 				<h1 className={s.infoTitle}>
-					Майбутнє фінансів <br/> разом із нами!
+					Майбутнє фінансів <br /> разом із нами!
 				</h1>
 				<p className={s.infoDesc}>
-					ТОВ &quot;ЛАЙТ ФІНАНС&quot;  – ваш надійний партнер у світі фінансів. Ми пропонуємо безпечні, ефективні та сучасні фінансові рішення, які допоможуть покращити ваш добробут.
+					ТОВ &quot;ЛАЙТ ФІНАНС&quot; – ваш надійний партнер у світі фінансів. Ми
+					пропонуємо безпечні, ефективні та сучасні фінансові рішення, які допоможуть
+					покращити ваш добробут.
 				</p>
 
 				<div className={s.buttonsGroup}>
-					<Button text="Розрахувати кредит" onClick={scrollToElement}/>
+					<Button text="Розрахувати кредит" onClick={scrollToElement} />
 				</div>
 			</article>
 		</section>

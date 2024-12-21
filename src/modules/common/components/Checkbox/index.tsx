@@ -1,7 +1,7 @@
-import type {FC} from 'react';
-import {ChangeEvent} from "react";
+import type { FC } from 'react';
+import { ChangeEvent } from 'react';
 
-import s from './Checkbox.module.scss'
+import s from './Checkbox.module.scss';
 
 interface CheckboxProps {
 	label: string;
@@ -11,13 +11,13 @@ interface CheckboxProps {
 }
 
 const Checkbox: FC<CheckboxProps> = ({
-	                                     onChange,
-	                                     value,
-	                                     name,
-	                                     label,
-	                                     ...props
-                                     }) => {
-	const {...checkboxProps} = props;
+	onChange,
+	value,
+	name,
+	label,
+	...props
+}) => {
+	const { ...checkboxProps } = props;
 	return (
 		<label className={s.container}>
 			<input

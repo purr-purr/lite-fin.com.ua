@@ -1,17 +1,17 @@
-import {useState} from "react";
-import type {ICalcRange} from "@modules/calc/types";
-import CalcSliders from "@modules/calc/components/CalcSliders";
-import cn from "classnames";
-import Button from "@modules/common/components/Button";
-import CalcConsequencesWarning
-	from "@modules/calc/components/CalcConsequencesWarning";
+import { useState } from 'react';
+import type { ICalcRange } from '@modules/calc/types';
+import CalcSliders from '@modules/calc/components/CalcSliders';
+import cn from 'classnames';
+import Button from '@modules/common/components/Button';
+import CalcConsequencesWarning from '@modules/calc/components/CalcConsequencesWarning';
 
 import s from './Calc.module.scss';
-import Registration from "@modules/registration/components/Registration";
+import Registration from '@modules/registration/components/Registration';
 
 const Calc = () => {
 	const [isRetirementAge, setIsRetirementAge] = useState(false);
-	const [isConsequencesWarningModal, setIsConsequencesWarningModal] = useState(false);
+	const [isConsequencesWarningModal, setIsConsequencesWarningModal] =
+		useState(false);
 
 	const ageRestrictions = [
 		{
@@ -77,7 +77,7 @@ const Calc = () => {
 				))}
 			</div>
 
-			<CalcSliders ranges={loanConditions} isRetirementAge={isRetirementAge}/>
+			<CalcSliders ranges={loanConditions} isRetirementAge={isRetirementAge} />
 
 			<Button
 				onClick={() => setIsConsequencesWarningModal(true)}
@@ -85,7 +85,7 @@ const Calc = () => {
 				text="Попередження про можливі наслідки згідно із законодавством України для споживачів у разі користування цією фінансовою послугою або невиконання ними обов’язків згідно з договором про споживчий кредит"
 			/>
 
-			<Registration/>
+			<Registration />
 
 			<CalcConsequencesWarning
 				isModalOpen={isConsequencesWarningModal}

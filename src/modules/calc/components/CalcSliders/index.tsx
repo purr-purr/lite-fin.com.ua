@@ -1,14 +1,14 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 
 import s from './CalcSliders.module.scss';
 import Slider from '@mui/material/Slider';
-import type {ICalcRange} from '@modules/calc/types';
-import CalcResult from "@modules/calc/components/CalcResult";
+import type { ICalcRange } from '@modules/calc/types';
+import CalcResult from '@modules/calc/components/CalcResult';
 
 const CalcSliders: FC<{
 	ranges: ICalcRange;
 	isRetirementAge: boolean;
-}> = ({ranges, isRetirementAge}) => {
+}> = ({ ranges, isRetirementAge }) => {
 	const [moneyAmount, setMoneyAmount] = useState<number>(1000);
 	const [duration, setDuration] = useState<number>(1);
 
@@ -31,6 +31,7 @@ const CalcSliders: FC<{
 						step={500}
 						min={500}
 						max={moneyRange[1]}
+						color="primary"
 					/>
 					<p className={s.range}>
 						<span>{moneyRange[0]} грн.</span>
@@ -47,6 +48,7 @@ const CalcSliders: FC<{
 						step={1}
 						min={durationRange[0]}
 						max={durationRange[1]}
+						color="primary"
 					/>
 					<p className={s.range}>
 						<span>{durationRange[0]} день</span>
@@ -55,7 +57,7 @@ const CalcSliders: FC<{
 				</li>
 			</ul>
 
-			<CalcResult moneyAmount={moneyAmount} duration={duration}/>
+			<CalcResult moneyAmount={moneyAmount} duration={duration} />
 		</>
 	);
 };
