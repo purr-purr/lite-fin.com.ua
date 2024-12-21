@@ -1,0 +1,51 @@
+.container {
+	padding-block: 170px 80px;
+	z-index: 1;
+
+	@include media($mobile-bp) {
+		padding-block: 80px 40px;
+	}
+
+	@include pseudo() {
+		width: 100vw;
+		height: 100%;
+		top: 0;
+		left: calc((100% - 100vw) / 2);
+		z-index: -1;
+		background: url('../../assets/intro-bg.png') no-repeat bottom center;
+		background-size: cover;
+	}
+}
+
+.info {
+	max-width: 960px;
+	width: 100%;
+
+	&Title {
+		@include gradient-text();
+		font-size: 80px;
+		font-weight: 600;
+		margin-bottom: 24px;
+
+		@include media($mobile-bp) {
+			font-size: 30px;
+			margin-bottom: 14px;
+		}
+	}
+
+	&Desc {
+		font-size: 18px;
+		line-height: 1.6;
+		max-width: 600px;
+		margin-bottom: 40px;
+
+		@include media($mobile-bp) {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.buttonsGroup {
+	width: fit-content;
+}
