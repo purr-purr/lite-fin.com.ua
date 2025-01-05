@@ -8,8 +8,8 @@
 	font-weight: 700;
 	line-height: 1.5;
 	text-align: center;
-	color: var(--white);
 	margin-bottom: 16px;
+	color: var(--bold-text);
 
 	@include media($mobile-bp) {
 		font-size: 16px;
@@ -38,7 +38,6 @@
 		}
 
 		&:first-child {
-			color: var(--white);
 			width: 66%;
 			min-width: 66%;
 			padding-right: 20px;

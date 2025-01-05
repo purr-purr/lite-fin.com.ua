@@ -22,7 +22,7 @@ const Intro = () => {
 				</p>
 
 				<div className={s.buttonsGroup}>
-					<Button text="Розрахувати кредит" onClick={scrollToElement} />
+					<Button text="Розрахувати кредит" type="white" onClick={scrollToElement} />
 				</div>
 			</article>
 		</section>

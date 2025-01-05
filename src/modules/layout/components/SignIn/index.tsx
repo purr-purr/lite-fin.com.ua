@@ -46,6 +46,7 @@ const SignIn = () => {
 			<Button
 				className={s.signInButton}
 				size="small"
+				type="white"
 				text="Увійти"
 				onClick={() => setIsSignInModal(true)}
 			/>

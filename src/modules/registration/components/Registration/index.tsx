@@ -9,14 +9,14 @@ import RegistrationStep3 from '@modules/registration/components/RegistrationStep
 import type { registrationSteps } from '@modules/registration/types';
 import RegistrationStep4 from '@modules/registration/components/RegistrationStep4';
 import { useMediaQuery } from '@modules/common/hooks';
-import { LOW_MOBILE_BREAKPOINT } from '@utils/const';
+import { MOBILE_BREAKPOINT } from '@utils/const';
 
 const Registration = () => {
 	const [isRegistrationModal, setIsRegistrationModal] = useState<boolean>(false);
 	const [stepNumber, setStepNumber] = useState<registrationSteps>(1);
 	const [stepFormValid, setStepFormValid] = useState<boolean>(false);
 	const [isSuccessStage, setIsSuccessStage] = useState<boolean>(false);
-	const isLowMobile = useMediaQuery(LOW_MOBILE_BREAKPOINT);
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
 
 	const handleSuccessStage = () => {
 		setIsSuccessStage(true);
@@ -63,7 +63,7 @@ const Registration = () => {
 				) : (
 					<>
 						<h3 className={s.title}>Оформлення споживчого кредиту</h3>
-						{!isLowMobile && (
+						{!isMobile && (
 							<RegistrationStapper step={stepNumber as registrationSteps} />
 						)}
 						{getStepComponent[stepNumber as registrationSteps]}

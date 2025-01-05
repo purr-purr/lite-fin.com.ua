@@ -9,7 +9,7 @@ import s from './Layout.module.scss';
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#FFD700',
+			main: '#2A027A',
 		},
 	},
 });

@@ -23,7 +23,7 @@ const ColorlibConnector = styled(StepConnector)(() => ({
 	},
 	[`&.${stepConnectorClasses.completed}`]: {
 		[`& .${stepConnectorClasses.line}`]: {
-			backgroundColor: '#FFD700',
+			backgroundColor: '#2A027A',
 		},
 	},
 	[`& .${stepConnectorClasses.line}`]: {
@@ -61,7 +61,7 @@ const ColorlibStepIconRoot = styled('div')<{
 		backgroundColor: '#E9E9EB',
 	}),
 	...(ownerState.completed && {
-		backgroundColor: '#FFD700',
+		backgroundColor: '#2A027A',
 	}),
 }));
 

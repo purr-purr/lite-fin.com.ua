@@ -21,7 +21,6 @@
 .range {
 	font-size: 16px;
 	line-height: 20px;
-	color: var(--white);
 
 	@include media($mobile-bp) {
 		font-size: 14px;
